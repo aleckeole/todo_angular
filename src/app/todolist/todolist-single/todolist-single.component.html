@@ -1,0 +1,11 @@
+<div class="container">
+  <a routerLink="" class="btn btn-warning mt-2">Retour à l'accueil</a>
+  <div class="todolist text-center mt-3">
+    <h2 class="text-uppercase">{{ getTodolist().title }}</h2>
+    <div class="tasks">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let t of getTodolist().tasks">{{t.content}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -4,15 +4,24 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TodolistListComponent } from './todolist/todolist-list/todolist-list.component';
+import { RouterModule, Routes } from '@angular/router';
+import { TodolistSingleComponent } from './todolist/todolist-single/todolist-single.component';
+
+const appRoutes: Routes = [
+  { path: '', component: TodolistListComponent },
+  { path: 'todolist/:id', component: TodolistSingleComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodolistListComponent
+    TodolistListComponent,
+    TodolistSingleComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

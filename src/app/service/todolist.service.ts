@@ -6,6 +6,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TodolistService {
 
+  todolists:any[] = [];
+  todolist:any;
+
   constructor(private http: HttpClient) { }
 
   save(body) {
@@ -16,8 +19,18 @@ export class TodolistService {
   }
 
   findAll() {
-    this.http.get('http://localhost:8080/api/todolist').subscribe(
-      r => console.log(r)
+    this.http.get<any[]>('http://localhost:8080/api/todolist').subscribe(
+      (r) => {
+        this.todolists = r;
+      }
     )
+  }
+
+  findById(id: number) {
+    this.http.get<any>('http://localhost:8080/api/todolist/' + id).subscribe(
+      (r) => {
+        this.todolist = r;
+      }
+    );
   }
 }

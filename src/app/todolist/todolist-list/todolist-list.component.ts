@@ -8,10 +8,17 @@ import { TodolistService } from 'src/app/service/todolist.service';
 })
 export class TodolistListComponent implements OnInit {
 
+  todolists:any[] = [];
+
   constructor(private service: TodolistService) { }
 
   ngOnInit() {
     this.service.findAll();
+  }
+
+  findAll() {
+    this.todolists = this.service.todolists;
+    return this.todolists;
   }
 
 }
