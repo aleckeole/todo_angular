@@ -2,9 +2,19 @@
   <a routerLink="" class="btn btn-warning mt-2">Retour à l'accueil</a>
   <div class="todolist text-center mt-3">
     <h2 class="text-uppercase">{{ getTodolist().title }}</h2>
+    <div class="alert alert-info alert-done-task text-center">
+      <p>Pour signaler une tâche comme étant finalisé, cliquez sur cette dernière.</p>
+    </div>
     <div class="tasks">
+      <!-- <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm" class="form-inline"> 
+        <input type="text" ngModel name="content" class="form-control">
+        <button class="btn btn-success">Ajout tache</button>
+      </form>-->
+      <hr>
       <ul class="list-group">
-        <li class="list-group-item" *ngFor="let t of getTodolist().tasks">{{t.content}}</li>
+        <li class="list-group-item" *ngFor="let t of getTodolist().tasks">
+          <a (click)="onClick(t)">{{t.content}}</a>
+        </li>
       </ul>
     </div>
   </div>

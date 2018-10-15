@@ -12,7 +12,7 @@ export class TodolistService {
   constructor(private http: HttpClient) { }
 
   save(body) {
-    this.http.get('http://localhost:8080/api/todolist', body)
+    this.http.post('http://localhost:8080/api/todolist', body)
       .subscribe((r) => {
         console.log(r);
       })
@@ -30,6 +30,15 @@ export class TodolistService {
     this.http.get<any>('http://localhost:8080/api/todolist/' + id).subscribe(
       (r) => {
         this.todolist = r;
+      }
+    );
+  }
+
+  saveTaskWithTodolist(task) {
+    this.http.post('http://localhost:8080/api/task/todolist/1', task).subscribe(
+      (r) => {
+        console.log(r);
+        this.todolist.tasks.push(r);
       }
     );
   }

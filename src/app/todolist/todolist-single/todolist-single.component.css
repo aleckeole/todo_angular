@@ -1,4 +1,9 @@
 .tasks {
-    width:  50%;
+    width:  60%;
+    margin: auto;
+}
+
+.alert-done-task {
+    width: 50%;
     margin: auto;
 }
