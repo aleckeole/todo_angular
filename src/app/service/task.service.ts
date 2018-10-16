@@ -8,10 +8,13 @@ export class TaskService {
 
   constructor(private http: HttpClient) { }
 
-  save(task) {
-    console.log(task);
-    this.http.post('http://localhost:8080/api/task', task).subscribe(
+  setDoneValue(task, id: number) {
+    this.http.post('http://localhost:8080/api/task/todolist/' + id, task).subscribe(
       r => console.log(r)
     )
+  }
+  
+  delete(id: number) {
+    this.http.delete('http://localhost:8080/api/task/' + id).subscribe();
   }
 }

@@ -34,12 +34,23 @@ export class TodolistSingleComponent implements OnInit {
       done: false
     }
     this.service.saveTaskWithTodolist(task);
+    taskForm.reset();
     console.log(task);
   }
 
-  onClick(task) {
+  onClick(task, idTodolist: number) {
     task.done = !task.done;
-    this.taskService.save(task);
+    const editTask = {
+      id: task.id,
+      content: task.content,
+      done: task.done
+    };
+    this.taskService.setDoneValue(editTask, idTodolist);
+  }
+
+  onClickDelete(id: number) {
+    alert('cliqué');
+    this.taskService.delete(id);
   }
 
 }

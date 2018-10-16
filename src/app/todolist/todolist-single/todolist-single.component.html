@@ -6,14 +6,20 @@
       <p>Pour signaler une tâche comme étant finalisé, cliquez sur cette dernière.</p>
     </div>
     <div class="tasks">
-      <!-- <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm" class="form-inline"> 
-        <input type="text" ngModel name="content" class="form-control">
-        <button class="btn btn-success">Ajout tache</button>
-      </form>-->
+       <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm" class="mt-2 mb-2"> 
+        <input type="text" ngModel name="content" class="form-control" placeholder="Ajout d'une tâche...">
+      </form>
       <hr>
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let t of getTodolist().tasks">
-          <a (click)="onClick(t)">{{t.content}}</a>
+          <a (click)="onClick(t, getTodolist().id)">
+            <del *ngIf="t.done === true; else normal">
+            {{t.content}}
+          </del>
+          <ng-template #normal>
+            {{t.content}}
+          </ng-template>
+          </a>
         </li>
       </ul>
     </div>
