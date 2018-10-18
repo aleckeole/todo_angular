@@ -1,9 +1,16 @@
-.tasks {
-    width:  60%;
-    margin: auto;
+.list-group-item {
+  border-radius: 0;
 }
 
-.alert-done-task {
-    width: 50%;
-    margin: auto;
+.form-control{
+  border-radius: 0;
+}
+
+.task-done {
+  display: block;
+  color: #0F7173;
+}
+
+.task-done i {
+  padding-right: 10px;
 }

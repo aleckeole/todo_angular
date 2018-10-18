@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+/*** BACKGROUND COLOR **/
+.bg-blue {
+  background-color: #26baee;
+  color: #f1f1F1;
+}
+
+.bg-blue-light {
+  background-color: #6bd5e1;
+  color: #2e2e2e;
+}
+
+.bg-pink-light{
+  background-color: #ffcdcd;
+}
+
+.bg-orange {
+  background-color: #ff8364;
+  color: #f8fbf8;
+}
+
+.bg-orange-light {
+  background-color: #ffb677;
+  color: #323232;
+}
+
+.bg-grey {
+  background-color: #CED0CE;
+  color: #000;
+}
+
+.bg-pink {
+  background-color: #ffcdcd;
+  color: #6d6d6d;
+}
+
+.title {
+  color: #6d6d6d !important;
+}
+
+
+
+.card {
+
+  border-color: #ebebeb;
+  border-radius: 0;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.btn-blue {
+  background-color: #407899;
+  color: #f1f1F1;
+}
+

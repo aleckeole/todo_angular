@@ -1,0 +1,52 @@
+.card {
+  padding: 10px 10px 10px 10px;
+}
+.icon {
+  background-color:#f2f4fb;
+  height:80px;
+  border-radius:50%;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  width:80px;
+  float: left;
+}
+
+.card-link {
+  color: inherit;
+}
+
+.card-title {
+  margin-left: 8px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.card-date {
+  margin-left: 8px;
+}
+
+.card-category {
+  margin-left: 8px;
+}
+
+.icon .fas {
+  text-align: center;
+  font-size: 2em;
+  padding: 21px 10px 5px 25px;
+  color: #ff9280;
+}
+
+
+.icon-add > i{
+  font-size: 3em;
+  background-color: #06D6A0;
+  height:80px;
+  border-radius:50%;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  width:80px;
+  padding: 15px 10px 5px 12px;
+  color: #f2f4fb;
+  box-shadow: #868485 1px 1px 1px;
+}
+
+

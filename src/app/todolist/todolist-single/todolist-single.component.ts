@@ -16,11 +16,13 @@ export class TodolistSingleComponent implements OnInit {
   constructor(private route: ActivatedRoute, 
     private service: TodolistService,
     private taskService: TaskService
-    ) { }
+    ) {
+    route.params.subscribe(value => {
+      this.service.findById(+value.id);
+    });
+  }
 
   ngOnInit() {
-    this.id = this.route.snapshot.params['id'];
-    this.service.findById(this.id);
   }
 
   getTodolist() {
@@ -28,12 +30,12 @@ export class TodolistSingleComponent implements OnInit {
     return this.todolist;
   }
 
-  onSubmit(taskForm) {
+  onSubmit(taskForm, idTodolist: number) {
     const task = {
       content: taskForm.value.content,
       done: false
     }
-    this.service.saveTaskWithTodolist(task);
+    this.service.saveTaskWithTodolist(task, idTodolist);
     taskForm.reset();
     console.log(task);
   }

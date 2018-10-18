@@ -1,21 +1,24 @@
-<div class="jumbotron">
-  <h1 class="display-5">Hello !</h1>
-  <hr class="my-4">
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Créer une todolist</a>
-  </p>
-</div>
-
+<h1 class="text-center title mt-4">Todo Manager</h1>
+  <div id="add" class="text-center mt-3">
+    <a routerLink="new"><span class="icon-add">
+      <i class="fas fa-plus"></i>
+    </span></a>
+  </div>
 <div class="container">
   <div class="row">
-    <div class="col-md-4 col-4" *ngFor="let t of findAll()">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">{{ t.title }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{t.date | date }}</h6>
-          <a routerLink="todolist/{{t.id}}" class="btn btn-success">Voir plus</a>
-        </div>
+    <div class="col-md-4 col-12 mt-4" *ngFor="let t of findAll()">
+      <a routerLink="todolist/{{t.id}}" class="card-link"><div class="">
+        <p>
+          <span class="icon"><i class="fas fa-utensils"></i></span>
+        <span class="card-title">{{t.title}}</span>
+          <br>
+          <span class="card-date"><i class="fas fa-calendar-alt"></i> {{t.date | date}}</span>
+          <br>
+          <span class="card-category"><i class="fas fa-tag"></i> Food</span>
+        </p>
       </div>
+      </a>
     </div>
+
   </div>
 </div>

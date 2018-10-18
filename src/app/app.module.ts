@@ -7,17 +7,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { TodolistListComponent } from './todolist/todolist-list/todolist-list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TodolistSingleComponent } from './todolist/todolist-single/todolist-single.component';
+import { TodolistSaveComponent } from './todolist/todolist-save/todolist-save.component';
 
 const appRoutes: Routes = [
   { path: '', component: TodolistListComponent },
-  { path: 'todolist/:id', component: TodolistSingleComponent }
+  { path: 'todolist/:id', component: TodolistSingleComponent },
+  { path: 'new', component: TodolistSaveComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     TodolistListComponent,
-    TodolistSingleComponent
+    TodolistSingleComponent,
+    TodolistSaveComponent
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,7 @@ import { TodolistService } from 'src/app/service/todolist.service';
 })
 export class TodolistListComponent implements OnInit {
 
-  todolists:any[] = [];
+  todolists: any[] = [];
 
   constructor(private service: TodolistService) { }
 

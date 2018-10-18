@@ -1,25 +1,20 @@
 <div class="container">
-  <a routerLink="" class="btn btn-warning mt-2">Retour à l'accueil</a>
+  <a routerLink="" class="btn btn-warning mt-2"><i class="fas fa-arrow-circle-left"></i> Retour à l'accueil</a>
   <div class="todolist text-center mt-3">
-    <h2 class="text-uppercase">{{ getTodolist().title }}</h2>
-    <div class="alert alert-info alert-done-task text-center">
-      <p>Pour signaler une tâche comme étant finalisé, cliquez sur cette dernière.</p>
-    </div>
+    <h3 class="text-uppercase mt-4 mb-4">{{getTodolist().title}}</h3>
+    <p><i class="fas fa-calendar-alt"></i>  {{getTodolist().date | date}}</p>
+
     <div class="tasks">
-       <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm" class="mt-2 mb-2"> 
+       <form  class="mt-2 mb-2" (ngSubmit)="onSubmit(taskForm, getTodolist().id)" #taskForm="ngForm">
         <input type="text" ngModel name="content" class="form-control" placeholder="Ajout d'une tâche...">
       </form>
       <hr>
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let t of getTodolist().tasks">
-          <a (click)="onClick(t, getTodolist().id)">
-            <del *ngIf="t.done === true; else normal">
-            {{t.content}}
-          </del>
-          <ng-template #normal>
-            {{t.content}}
-          </ng-template>
-          </a>
+          <a (click)="onClick(t, getTodolist().id)"><span *ngIf="t.done == false; else taskDone">{{t.content}}</span>
+          <ng-template #taskDone>
+            <span class="task-done"><i class="fas fa-check-circle"></i> <del>{{t.content}}</del></span>
+          </ng-template></a>
         </li>
       </ul>
     </div>
