@@ -1,0 +1,11 @@
+<div class="container mt-4">
+  <h2 class="title text-center">Nouvelle todolist</h2>
+  <a routerLink="" class="btn btn-warning"><i class="fas fa-arrow-circle-left"></i> Retour à l'accueil</a>
+  <div id="formSave" class="mt-3">
+    <form #todoForm="ngForm" (ngSubmit)="onSubmit(todoForm)">
+      <input type="text" class="form-control mt-2" name="title" ngModel placeholder="Titre de la todolist">
+      <input type="date" name="date" ngModel class="form-control mt-2">
+      <button class="btn btn-blue mt-4">Valider</button>
+    </form>
+  </div>
+</div>

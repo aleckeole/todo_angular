@@ -1,0 +1,10 @@
+#form {
+  padding: 25px 25px 25px 25px;
+  background-color: #f1f3f1;
+  margin-top: 40%;
+  border-radius: 5px;
+}
+
+#form > h2 {
+  color: #0F7173 !important;
+}

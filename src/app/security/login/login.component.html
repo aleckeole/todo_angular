@@ -1,0 +1,13 @@
+<div class="container">
+
+  <div id="form">
+    <h2 class="title text-center text-uppercase mb-4">Connexion</h2>
+
+    <form #loginForm="ngForm">
+      <input type="text" class="form-control" placeholder="Username" ngModel name="username" required>
+      <input type="password" class="form-control mt-2" placeholder="Password" ngModel name="password" required>
+      <p class="mt-2">Pas encore inscrit ? <a href="">Créez un compte</a></p>
+      <button class="btn btn-blue mt-2" [disabled]="loginForm.invalid">Se connecter</button>
+    </form>
+  </div>
+</div>
