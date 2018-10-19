@@ -9,12 +9,12 @@
     <div class="col-md-4 col-12 mt-4" *ngFor="let t of findAll()">
       <a routerLink="todolist/{{t.id}}" class="card-link"><div class="">
         <p>
-          <span class="icon"><i class="fas fa-utensils"></i></span>
+          <span class="icon"><i class="{{t.category.icon}}"></i></span>
         <span class="card-title">{{t.title}}</span>
           <br>
           <span class="card-date"><i class="fas fa-calendar-alt"></i> {{t.date | date}}</span>
           <br>
-          <span class="card-category"><i class="fas fa-tag"></i> Food</span>
+          <span class="card-category"><i class="fas fa-tag"></i> {{t.category.title}}</span>
         </p>
       </div>
       </a>

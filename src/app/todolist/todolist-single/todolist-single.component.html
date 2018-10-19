@@ -16,9 +16,10 @@
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let t of getTodolist().tasks">
           <a (click)="onClick(t, getTodolist().id)"><span *ngIf="t.done == false; else taskDone">{{t.content}}</span>
-          <ng-template #taskDone>
-            <span class="task-done"><i class="fas fa-check-circle"></i> <del>{{t.content}}</del></span>
-          </ng-template></a>
+            <ng-template #taskDone>
+              <span class="task-done"><i class="fas fa-check-circle"></i> <del>{{t.content}}</del></span>
+            </ng-template>
+          </a>
         </li>
       </ul>
     </div>

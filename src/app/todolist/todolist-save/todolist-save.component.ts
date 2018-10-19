@@ -9,13 +9,15 @@ import { Router } from '@angular/router';
 })
 export class TodolistSaveComponent implements OnInit {
 
+  title: string = 'Nouvelle todolist';
+
   constructor(private service: TodolistService, private router: Router) { }
 
   ngOnInit() {
   }
 
   onSubmit(todoForm) {
-    this.service.save(todoForm.value);
+    this.service.saveWithCategory(todoForm.value, 1);
     this.router.navigate(['todolist/2']);
   }
 
