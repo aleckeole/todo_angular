@@ -51,4 +51,8 @@ export class TodolistService {
       }
     );
   }
+
+  delete(id: number) {
+    this.http.delete('http://localhost:8080/api/todolist/' + id).subscribe();
+  }
 }

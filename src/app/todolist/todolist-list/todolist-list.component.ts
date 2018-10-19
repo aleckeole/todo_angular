@@ -10,7 +10,9 @@ export class TodolistListComponent implements OnInit {
 
   todolists: any[] = [];
 
-  constructor(private service: TodolistService) { }
+  constructor(private service: TodolistService) {
+
+  }
 
   ngOnInit() {
     this.service.findAll();

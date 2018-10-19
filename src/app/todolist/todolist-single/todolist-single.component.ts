@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { TodolistService } from 'src/app/service/todolist.service';
 import { TaskService } from 'src/app/service/task.service';
 
@@ -15,7 +15,8 @@ export class TodolistSingleComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, 
     private service: TodolistService,
-    private taskService: TaskService
+    private taskService: TaskService,
+    private router: Router
     ) {
     route.params.subscribe(value => {
       this.service.findById(+value.id);
@@ -51,8 +52,8 @@ export class TodolistSingleComponent implements OnInit {
   }
 
   onClickDelete(id: number) {
-    alert('cliqué');
-    this.taskService.delete(id);
+    this.service.delete(id);
+    this.router.navigate(['']);
   }
 
 }
